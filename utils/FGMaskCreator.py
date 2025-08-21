@@ -22,13 +22,14 @@ def get_backgrounds(imgs, out_path):
         print(idx)
         img_file = cv2.imread(img)
         img_file = cv2.cvtColor(img_file, cv2.COLOR_BGR2RGB)
-        img_file = cv2.resize(img_file, (1280,1024))
+        img_file = cv2.resize(img_file, (512,512))
         
         with torch.no_grad():
             sam.set_image(img_file)
             #input_points = [[0,0],[319,0],[0,255],[319,255]]
-            input_points = [[0,0],[1279,0],[0,1023],[1279,1023]]
-            final_mask = np.zeros((1, 1024,1280))
+            input_points = [[0,0],[511,0],[0, 511],[511,511]]
+            #input_points = [[0,0],[1279,0],[0,1023],[1279,1023]]
+            final_mask = np.zeros((1, 511,511))
             for i, point in enumerate(input_points):
                 mask, _, _ = sam.predict(point_coords=np.array([point]), point_labels=np.array([1]), multimask_output=False)
                 final_mask = np.maximum(final_mask, mask)

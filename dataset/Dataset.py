@@ -102,8 +102,8 @@ class Dataset(torch.utils.data.Dataset):
         test: bool,
     ):
         super().__init__()
-        self.image_width = 1280  # Changed from 320
-        self.image_height = 1024  # Changed from 256
+        self.image_width = 512  # Changed from 320
+        self.image_height = 512  # Changed from 256
         self.test = test
 
         self.category = datasetParameters["category"]

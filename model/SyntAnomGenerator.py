@@ -36,8 +36,8 @@ class SyntAnomalyGenerator:
 
         # Add downsampling parameters
         self.downsample_factor = 4  # Downsample by factor of 4 to go from 1280x1024 to 320x256
-        self.max_width = 1280  # Maximum width after downsampling
-        self.max_height = 1024  # Maximum height after downsampling
+        self.max_width = 512  # Maximum width after downsampling
+        self.max_height = 512  # Maximum height after downsampling
 
     def downsample_input(self, x):
         """Downsample input tensor if it exceeds max dimensions"""

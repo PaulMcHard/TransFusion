@@ -61,8 +61,8 @@ def get_argparser():
     parser.add_argument("--unet-group-conv", type=int, default=[True, True, True, True])
     parser.add_argument("--unet-n-blocks", type=int, default=2)
 
-    parser.add_argument("--img-width", type=int, default=1280)
-    parser.add_argument("--img-height", type=int, default=1024)
+    parser.add_argument("--img-width", type=int, default=512)
+    parser.add_argument("--img-height", type=int, default=512)
 
     parser.add_argument("--eval-kernel-size", type=int, default=7)
     parser.add_argument("--eval-w", type=float, default=0.95)
